@@ -21,7 +21,10 @@ namespace FlyoverApp.iOS.Camera
                 _configuration = value;
                 _mapCamera.Altitude = _configuration.Altitude;
                 _mapCamera.Pitch = new nfloat(_configuration.Pitch);
-                PerformFlyover(_flyover);
+                //if (_flyover != null)
+                //{
+                //    PerformFlyover(_flyover);
+                //}
             }
         }
 
@@ -31,14 +34,23 @@ namespace FlyoverApp.iOS.Camera
 
         private MKMapView _mapView { get; set; }
 
+        private MKMapCamera _mapCameraValue { get; set; }
         private MKMapCamera _mapCamera
         {
             get
             {
-                var camera = new MKMapCamera();
-                camera.Altitude = Configuration.Altitude;
-                camera.Pitch = new nfloat(Configuration.Pitch);
-                return camera;
+                if (_mapCameraValue == null)
+                {
+                    var camera = new MKMapCamera();
+                    camera.Altitude = Configuration.Altitude;
+                    camera.Pitch = new nfloat(Configuration.Pitch);
+                    _mapCameraValue = camera;
+                }
+                return _mapCameraValue;
+            }
+            set
+            {
+                _mapCameraValue = value;
             }
         }
 
@@ -175,7 +187,8 @@ namespace FlyoverApp.iOS.Camera
                 return;
             }
             // Increase heading by heading step for _mapCamera
-            _mapCamera.Heading = (_mapCamera.Heading + Configuration.HeadingStep) % 360;
+            _mapCamera.Heading += Configuration.HeadingStep;
+            _mapCamera.Heading = _mapCamera.Heading % 360;
             // Initialize UIViewPropertyAnimator
             _animator = new UIViewPropertyAnimator(
                                 Configuration.Duration,

@@ -96,6 +96,14 @@ namespace FlyoverApp.iOS.Camera
         public static bool operator ==(FlyoverCameraConfiguration lhs,
                                        FlyoverCameraConfiguration rhs)
         {
+            if(ReferenceEquals(lhs, null))
+            {
+                return ReferenceEquals(rhs, null);
+            }
+            if(ReferenceEquals(rhs, null))
+            {
+                return ReferenceEquals(lhs, null);
+            }
             return lhs.Duration.Equals(rhs.Duration)
                 && lhs.Altitude.Equals(rhs.Altitude)
                 && lhs.Pitch.Equals(rhs.Pitch)
@@ -111,8 +119,9 @@ namespace FlyoverApp.iOS.Camera
         public override bool Equals(object obj)
         {
             if (obj == null || GetType() != obj.GetType())
+            {
                 return false;
-
+            }
             var f = (FlyoverCameraConfiguration)obj;
             return Duration == f.Duration
                 && Altitude == f.Altitude

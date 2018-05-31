@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using FlyoverApp.Pages;
 
 using Xamarin.Forms;
 
 namespace FlyoverApp
 {
-	public partial class App : Application
+    public partial class App : Application
 	{
 		public App ()
 		{
 			InitializeComponent();
 
-			MainPage = new FlyoverApp.MainPage();
+            //MainPage = new FlyoverApp.MainPage();
+            MainPage = new FlyoverPage();
 		}
 
 		protected override void OnStart ()

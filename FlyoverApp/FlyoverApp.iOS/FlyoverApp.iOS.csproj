@@ -93,6 +93,7 @@
     <Compile Include="Camera\FlyoverCameraConfigurationTheme.cs" />
     <Compile Include="Camera\FlyoverCameraState.cs" />
     <Compile Include="Camera\RegionChangeAnimation.cs" />
+    <Compile Include="CustomRenderers\CustomMapRenderer.cs" />
     <Compile Include="Extensions\FlyoverAwesomePlaceExtensions.cs" />
     <Compile Include="Extensions\FlyoverCameraConfigurationExtensions.cs" />
     <Compile Include="Extensions\FlyoverExtensions.cs" />
@@ -104,6 +105,8 @@
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
+    <Compile Include="MapView\FlyoverMapView.cs" />
+    <Compile Include="MapView\FlyoverMapViewController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -143,8 +146,5 @@
       <Name>FlyoverApp</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CustomRenderers\" />
-    <Folder Include="MapView\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

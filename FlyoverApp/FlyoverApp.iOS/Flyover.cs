@@ -71,6 +71,14 @@ namespace FlyoverApp.iOS
 
         public static bool operator ==(Flyover lhs, Flyover rhs)
         {
+            if(ReferenceEquals(lhs, null))
+            {
+                return ReferenceEquals(rhs, null);
+            }
+            if(ReferenceEquals(rhs, null))
+            {
+                return ReferenceEquals(lhs, null);
+            }
             return lhs?.Coordinate.Latitude == rhs?.Coordinate.Latitude
                 && lhs?.Coordinate.Longitude == rhs?.Coordinate.Longitude;
         }
