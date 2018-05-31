@@ -6,6 +6,7 @@ using CoreLocation;
 using FlyoverApp.Controls;
 using FlyoverApp.iOS.Camera;
 using FlyoverApp.iOS.CustomRenderers;
+using FlyoverApp.iOS.Extensions;
 using FlyoverApp.iOS.MapView;
 using Foundation;
 using MapKit;
@@ -33,9 +34,10 @@ namespace FlyoverApp.iOS.CustomRenderers
                 var formsMap = (CustomMap)e.NewElement;
                 var nativeMap = Control as MKMapView;
 
-                FlyoverMapView flyoverMapView = new FlyoverMapView(MKMapType.SatelliteFlyover, new FlyoverCameraConfiguration(FlyoverCameraConfigurationTheme.Default));
+                FlyoverMapView flyoverMapView = new FlyoverMapView(MKMapType.Satellite, 
+                                                                   new FlyoverCameraConfiguration(FlyoverCameraConfigurationTheme.Default));
                 SetNativeControl(flyoverMapView);
-                flyoverMapView.Start(new Flyover(new CLLocationCoordinate2D(40.689249, -74.044500)));
+                flyoverMapView.Start(new Flyover(FlyoverAwesomePlace.NewYorkStatueOfLiberty.GetCoordinates()));
             }
         }
     }

@@ -21,7 +21,7 @@ namespace FlyoverApp.iOS.MapView
 
         public FlyoverMapViewController(
             Flyover flyover,
-            MKMapType mapType = MKMapType.Standard,
+            MKMapType mapType = MKMapType.Satellite,
             FlyoverCameraConfiguration configuration = null)
         {
             if(configuration == null)

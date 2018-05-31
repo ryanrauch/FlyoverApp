@@ -5,7 +5,7 @@
              x:Class="FlyoverApp.Pages.FlyoverPage">
     <ContentPage.Content>
         <StackLayout>
-            <controls:CustomMap />
+            <controls:CustomMap MapType="Satellite" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -4,7 +4,7 @@ namespace FlyoverApp.iOS.Extensions
 {
     public static class FlyoverAwesomePlaceExtensions
     {
-        public static CLLocationCoordinate2D Coordinate(this FlyoverAwesomePlace place)
+        public static CLLocationCoordinate2D GetCoordinates(this FlyoverAwesomePlace place)
         {
             switch(place)
             {

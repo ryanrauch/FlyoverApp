@@ -42,7 +42,7 @@ namespace FlyoverApp.iOS.MapView
         }
 
         public FlyoverMapView(
-            MKMapType mapType = MKMapType.Standard,
+            MKMapType mapType = MKMapType.Satellite,
             FlyoverCameraConfiguration configuration = null)
         {
             //this.Frame = CGRect.Empty; //super.init(frame: .zero)
